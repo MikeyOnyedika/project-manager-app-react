@@ -100,7 +100,7 @@ class BaseDb {
 
      getProjectBoards(projectId) {
           return new Promise((resolve, reject) => {
-               const query = `SELECT * FROM board WHERE project_id = ? ORDER BY date_created DESC`;
+               const query = `SELECT * FROM board WHERE project_id = ?`;
                this.#connection.query(query, [projectId], (error, result) => {
                     if (!error) {
                          result = result.map((board) => {
